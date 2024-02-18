@@ -9,6 +9,7 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.hamcrest.Matchers;
 import org.junit.Before;
+import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -19,7 +20,7 @@ import static io.restassured.RestAssured.given;
 @RunWith(Parameterized.class)
 public class CreateOrderTest {
     private Order order;
-
+    private Integer idTrack;
     public CreateOrderTest(Order order){
         this.order = order;
     }
@@ -59,5 +60,16 @@ public class CreateOrderTest {
                 .post("/api/v1/orders");
         response.then().log().all()
                 .assertThat().body("track", Matchers.notNullValue()).and().statusCode(201);
+        idTrack = response.jsonPath().getInt("track");
+    }
+
+    @After
+    public void deleteTrack() {
+        RestAssured.baseURI = "https://qa-scooter.praktikum-services.ru";
+        given()
+                .header("Content-type", "application/json")
+                .body("{" + "track" + idTrack + "}")
+                .when()
+                .delete("/api/v1/orders/cancel");
     }
 }

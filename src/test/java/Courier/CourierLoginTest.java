@@ -6,9 +6,12 @@ import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
+
+import static io.restassured.RestAssured.given;
 
 public class CourierLoginTest {
     @Before
@@ -28,7 +31,6 @@ public class CourierLoginTest {
         response.then().log().all()
                 .assertThat().body("id", Matchers.notNullValue()).and().statusCode(200);
     }
-
     @Test
     @DisplayName("Курьер заходит на сайт без логина")
     @Description("Проверка обязтельности заполнения поля, статуса запроса авторизации курьера на сайте без логина " +
@@ -68,7 +70,6 @@ public class CourierLoginTest {
         Response response = clientStep.sendPostRequestApiV1CourierLogin(courier);
         response.then().log().all()
                 .assertThat().body("message", Matchers.is("Учетная запись не найдена")).and().statusCode(404);
-
     }
 
     @Test
