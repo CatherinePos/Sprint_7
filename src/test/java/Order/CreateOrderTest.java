@@ -64,12 +64,12 @@ public class CreateOrderTest {
     }
 
     @After
-    public void deleteTrack() {
+    public void putTrack() {
         RestAssured.baseURI = "https://qa-scooter.praktikum-services.ru";
         given()
                 .header("Content-type", "application/json")
                 .body("{" + "track" + idTrack + "}")
                 .when()
-                .delete("/api/v1/orders/cancel");
+                .put("/api/v1/orders/cancel");
     }
 }
