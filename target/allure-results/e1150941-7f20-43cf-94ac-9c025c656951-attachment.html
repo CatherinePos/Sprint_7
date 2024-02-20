@@ -1,0 +1,59 @@
+<div>POST to http://qa-scooter.praktikum-services.ru/api/v1/orders</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+    {
+    &quot;id&quot;: 0,
+    &quot;courierId&quot;: null,
+    &quot;firstName&quot;: &quot;Константин&quot;,
+    &quot;lastName&quot;: &quot;Константинов&quot;,
+    &quot;address&quot;: &quot;Волгоград&quot;,
+    &quot;metroStation&quot;: &quot;10&quot;,
+    &quot;phone&quot;: &quot;+7 999 999 99 99&quot;,
+    &quot;rentTime&quot;: 3,
+    &quot;deliveryDate&quot;: &quot;2024-02-17&quot;,
+    &quot;track&quot;: 0,
+    &quot;color&quot;: [
+        &quot;GRAY&quot;,
+        &quot;BLACK&quot;
+    ],
+    &quot;comment&quot;: &quot;Хорошего дня&quot;,
+    &quot;createdAt&quot;: null,
+    &quot;updatedAt&quot;: null,
+    &quot;status&quot;: 0
+}
+    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;http://qa-scooter.praktikum-services.ru/api/v1/orders&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 0,
+    &quot;courierId&quot;: null,
+    &quot;firstName&quot;: &quot;Константин&quot;,
+    &quot;lastName&quot;: &quot;Константинов&quot;,
+    &quot;address&quot;: &quot;Волгоград&quot;,
+    &quot;metroStation&quot;: &quot;10&quot;,
+    &quot;phone&quot;: &quot;+7 999 999 99 99&quot;,
+    &quot;rentTime&quot;: 3,
+    &quot;deliveryDate&quot;: &quot;2024-02-17&quot;,
+    &quot;track&quot;: 0,
+    &quot;color&quot;: [
+        &quot;GRAY&quot;,
+        &quot;BLACK&quot;
+    ],
+    &quot;comment&quot;: &quot;Хорошего дня&quot;,
+    &quot;createdAt&quot;: null,
+    &quot;updatedAt&quot;: null,
+    &quot;status&quot;: 0
+}&#39;
+</div>
