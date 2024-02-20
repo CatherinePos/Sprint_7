@@ -2,7 +2,6 @@ package Courier;
 
 import Client.CourierClient;
 import Model.Courier;
-import Model.Order;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.RestAssured;

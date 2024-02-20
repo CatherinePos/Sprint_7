@@ -6,12 +6,9 @@ import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import org.apache.commons.lang3.RandomStringUtils;
 import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
-
-import static io.restassured.RestAssured.given;
 
 public class CourierLoginTest {
     @Before
